@@ -14,6 +14,7 @@ const Ride = () => {
                     <input type='text' placeholder='To Destination'/><br/>
                     <input type='text' placeholder='Date & time'/><br/>
                     <button className='make-reserve'>CREATE ACCOUNT</button>
+                    <p className='account'>Already had an account? <Link to='/login' className='account-color'>Login</Link></p>
                 </form>
 
             </div>

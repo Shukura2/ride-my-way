@@ -167,6 +167,13 @@ body{
   position: absolute;
   left: 50px;
 }
+.account{
+  margin-top: 90px;
+}
+.account-color{
+  color: white;
+  text-decoration: none;
+}
 
 /* LOGIN Component */
 .login-form{
@@ -374,6 +381,11 @@ body{
     width: 247px;
     left: 28px;
     top: 360px;
+  }
+  .account{
+    margin-top: -370px;
+    font-size: 12px;
+    color: white;
   }
   .login-bckgrnd-img{
     height: 800px;

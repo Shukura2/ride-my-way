@@ -17,7 +17,7 @@ function App() {
   return (
     <Router>
       <Route exact path="/" component={Home} />
-      <Route exact path='/ride' component={Ride} />
+      <Route exact path='/createaccount' component={Ride} />
       <Route exact path='/makereservation' component={MakeReservation} />
       <Route exact path='/login' component={LogIn} />
       <Route exact path='/rideoffers' component={RideOffers} />
