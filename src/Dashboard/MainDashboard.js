@@ -1,4 +1,6 @@
 import React from 'react';
+
+
 import imagesen from "../Images/imagese.png"
 import simple_full from '../Images/simple_full.png'
 
@@ -34,17 +36,10 @@ const MainDashboard = () => {
                 </div>
            </div>
            <div className='picture-grid'>
-               <div className='grid-box'> <img src ={imagesen} className='img'/> </div>
-               <div className='grid-box'> <img src ={simple_full} className='imgs'/> </div>
+               <div className='grid-box'> <img src ={imagesen} className='img' alt='' /> </div>
+               <div className='grid-box'> <img src ={simple_full} className='imgs' alt=''/> </div>
 
-                    {/* <div className='second-grid-item'>
-                        <p>Registration Chart</p>
-                         <img src ={imagesen} className='img'/> 
-                    </div>
-                    <div className='second-grid-item'>
-                        <p>Payment Chart</p>
-                        <img src ={simple_full} className='imgs'/>
-                    </div> */}
+               
             </div>
             
         </div>
