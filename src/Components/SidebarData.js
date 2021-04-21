@@ -3,36 +3,26 @@ import * as FaIcons from "react-icons/fa";
 import * as AiIcons from "react-icons/ai";
 import * as IoIcons from "react-icons/io";
 import Homes from '../Components/Pages/Homes';
+import {FaCarSide} from 'react-icons/fa';
+import {FaSignOutAlt} from 'react-icons/fa'
 
 export const SidebarData = [
   {
-    title: "Dashboard",
+    title: "My Dashboard",
     path: "/dashboard",
     icon: <AiIcons.AiFillHome />,
     cName: "nav-text",
   },
   {
-    title: "Map",
+    title: "Available Rides",
     path: "/map",
-    icon: <IoIcons.IoIosPaper />,
-    cName: "nav-text",
-  },
-  {
-    title: "Trip Details",
-    path: "/tripdetails",
-    icon: <FaIcons.FaCartPlus />,
-    cName: "nav-text",
-  },
-  {
-    title: "Review",
-    path: "/review",
-    icon: <IoIcons.IoMdPeople />,
+    icon: <FaCarSide />,
     cName: "nav-text",
   },
   {
     title: "Logout",
-    path: "/review",
-    icon: <IoIcons.IoMdPeople />,
+    path: "/home",
+    icon: <FaSignOutAlt />,
     cName: "nav-text",
   },
 ];

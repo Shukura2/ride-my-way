@@ -11,7 +11,7 @@ let Navbar = () => {
 
                 <label className='company-name'> Ride-my-way </label>
                 <ul className='navigation-list'>
-                    <Link to='/rideoffers'><li>Ride</li></Link>
+                    <Link to='/dashboard'><li>Ride</li></Link>
                     <Link to='/drive'><li>Drive</li></Link>
                       <Link to='/cities'><li>Cities</li></Link>
                 </ul>

@@ -2,6 +2,7 @@ import React from "react";
 import toyota from "../../Images/SE_-_2020_Toyota_Camry.png";
 import { Link } from "react-router-dom";
 import cartoon from '../../Images/download-2.jpg';
+import {FaStar} from 'react-icons/fa'
 
 function Map() {
   return (
@@ -20,6 +21,7 @@ function Map() {
             <div>
               <h3>Iskilu Rasheed</h3>
             </div>
+            <FaStar /> <FaStar /> <FaStar /> <FaStar /> <FaStar />
           </div>
           <Link to="/makeorder" className="button">
             Make Order
@@ -37,6 +39,7 @@ function Map() {
             <div>
               <h3>Ola Shehu</h3>
             </div>
+            <FaStar /> <FaStar /> <FaStar /> <FaStar /> <FaStar />
           </div>
           <Link to="/makeorder" className="button">
             Make Order
@@ -53,6 +56,7 @@ function Map() {
             <div>
               <h3>Paul Anu</h3>
             </div>
+            <FaStar /> <FaStar /> <FaStar /> <FaStar /> <FaStar />
           </div>
           <Link to="/makeorder" className="button">
             Make Order
