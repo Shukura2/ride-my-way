@@ -5,8 +5,7 @@ import { Link } from "react-router-dom";
 import { SidebarData } from "./SidebarData";
 import { IconContext } from "react-icons";
 import Homes from "./Pages/Homes";
-// import DBGreetings from '../Components/Pages/DBGreetings';
-// import steering from "../Images/chuttersnap-gts_Eh4g1lk-unsplash.jpg";
+
 
 function Navbar() {
   const [sidebar, setSidebar] = useState(false);
