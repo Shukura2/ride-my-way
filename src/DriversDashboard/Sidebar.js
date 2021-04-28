@@ -1,7 +1,7 @@
 import React from "react";
-import * as FaIcons from "react-icons/fa";
+// import * as FaIcons from "react-icons/fa";
 // import * as AiIcons from "react-icons/ai";
-import { FaCarSide } from "react-icons/fa";
+// import { FaCarSide } from "react-icons/fa";
 import { FaSignOutAlt } from "react-icons/fa";
 import { FaDesktop } from 'react-icons/fa';
 import { FaUserAlt } from 'react-icons/fa';
