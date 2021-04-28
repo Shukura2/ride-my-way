@@ -166,6 +166,7 @@ body {
 }
 .account {
   margin-top: 90px;
+  color: white;
 }
 .account-color {
   color: white;
@@ -202,6 +203,7 @@ body {
 .logs {
   font-size: 14px;
   padding-left: 40px;
+  color: white;
 }
 .logs .createcolor {
   color: white;
@@ -285,7 +287,6 @@ body {
 span {
   margin-left: 16px;
 }
-
 
 /*Home component */
 .home-holder {
@@ -425,6 +426,151 @@ span {
   width: 250px;
   height: 30px;
 }
+
+/*Drivers Dashboard Folder*/
+/*DashbHome Component*/
+
+.home-child {
+  width: 280px;
+  height: 130px;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  margin: 10px;
+  background-color: white;
+  padding: 15px;
+}
+.idk {
+  display: flex;
+  justify-content: space-between;
+}
+.home-container {
+  background-color: rgb(243, 230, 230);
+  width: 100%;
+  /* height: 100%; */
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+
+.hc-icon {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: rgb(243, 230, 230);
+  /* text-align: center; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* justify-content: ; */
+  /* margin-right: 10px; */
+}
+.hc-icon i {
+  font-size: 24px;
+  color: rgb(82, 15, 82);
+}
+.hc-member {
+  display: flex;
+  flex-direction: column;
+}
+.hc-bottom {
+  display: flex;
+}
+.hc-bottom i,
+p {
+  color: rgb(82, 15, 82);
+}
+.hc-bottom span {
+  color: black;
+  font-size: 14px;
+}
+.hc-banner2 {
+  display: flex;
+  flex-wrap: wrap;
+  background-color: rgb(243, 230, 230);
+  width: 100%;
+  justify-content: space-evenly;
+}
+.bigger-hc {
+  width: 520px;
+  height: 355px;
+  padding: 10px;
+  background-color: white;
+  border-radius: 10px;
+
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  margin: 10px;
+}
+
+/* .hc-graph {
+  width: 500px;
+  height: 315px;
+} */
+.bhc-img{
+  max-width: 100%;
+  height: 320px;
+}
+
+/*User Profile*/
+.header-user-p {
+  background-color: rgb(82, 15, 82);
+  padding: 20px;
+  color: white;
+}
+.banner-up {
+  width: 486px;
+  border: 3px solid rgb(82, 15, 82);
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  height: 320px;
+  margin: 5px;
+  text-align: center;
+  font-weight: bold;
+}
+.banner-up p {
+  color: black;
+}
+.banner-up button {
+  padding: 10px;
+  margin: 5px;
+}
+.color-red,
+.color-grn {
+  background-color: red;
+  color: white;
+  cursor: pointer;
+  outline: none;
+  border: none;
+}
+.color-grn {
+  background-color: green;
+}
+
+/* .container-img-div {
+  display: flex;
+  justify-content: center;
+} */
+.img-div {
+  width: 135px;
+  height: 135px;
+  border-radius: 50%;
+  /* margin: 5px; */
+  vertical-align: middle;
+}
+
+
+/*Feedback Component*/
+.wrap-all{
+  background-image: url(./Images/james-dibo-A2wEx8pb3yQ-unsplash.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 100%;
+  filter: blur(5px);
+  /* max-width: 100%; */
+  background-position: center;
+  
+}
+
+
 
 /*Media Querry*/
 @media only screen and (max-width: 600px) {

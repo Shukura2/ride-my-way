@@ -7,7 +7,7 @@ const BannerOne = () => {
             <div className='banner-design-content' >
                 <p className='info'> Always the ride <br /> you want </p>
                 <h3 className='info2'> Order a ride, hop in and let's go</h3>
-                <Link to='/createaccount' className='create-acc'>CREATE ACCOUNT  </Link>
+                <Link to='/create-account' className='create-acc'>CREATE ACCOUNT  </Link>
                 <Link to='/login' className='create-acc'> | LOGIN</Link> 
             </div>
             <div className='banner-design-content-two'>
