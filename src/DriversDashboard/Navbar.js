@@ -2,10 +2,10 @@ import React, { useState } from "react";
 import * as FaIcons from "react-icons/fa";
 import * as AiIcons from "react-icons/ai";
 import { Link } from "react-router-dom";
-import { SidebarData } from "./SidebarData";
+import { SidebarData } from "./Sidebar";
 import { IconContext } from "react-icons";
-import Homes from "./Pages/Homes";
-
+// import Homes from "./Pages/Homes";
+import DashbHome from '../DriversDashboard/DashbHome'
 
 function Navbar() {
   const [sidebar, setSidebar] = useState(false);
@@ -21,7 +21,7 @@ function Navbar() {
           </Link>
           <h3 className="navc">Ride-My-Way</h3>
         </div>
-        <Homes />
+        <DashbHome />
         {/* <DBGreetings /> */}
         <nav className={sidebar ? "nav-menu active" : "nav-menu"}>
           <ul className="nav-menu-items" onClick={showSidebar}>
@@ -43,7 +43,6 @@ function Navbar() {
           </ul>
         </nav>
       </IconContext.Provider>
-      
     </>
   );
 }

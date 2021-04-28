@@ -1,17 +1,22 @@
-import React from 'react';
-import {Link} from "react-router-dom"
+import React from "react";
+import { Link } from "react-router-dom";
 
 const LogIn = () => {
-    return(
-        <div className='login-bckgrnd-img'>
-           <form className='login-form'>
-               <input type= 'text' placeholder='Username'/> <br />
-               <input type= 'password' placeholder='Password'/> <br />
-               <button className='login'>LOGIN</button>
-               <p className='logs'>Not Registered? <Link to='/createaccount' className='createcolor'>Create Account</Link></p>
-           </form>
-        </div>
-    )
-}
+  return (
+    <div className="login-bckgrnd-img">
+      <form className="login-form">
+        <input type="text" placeholder="Username" /> <br />
+        <input type="password" placeholder="Password" /> <br />
+        <button className="login">LOGIN</button>
+        <p className="logs">
+          Not Registered?{" "}
+          <Link to="/create-account" className="createcolor">
+            Create Account
+          </Link>
+        </p>
+      </form>
+    </div>
+  );
+};
 
-export default  LogIn;
+export default LogIn;

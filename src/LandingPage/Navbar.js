@@ -7,7 +7,7 @@ let Navbar = () => {
         <div>
             <nav className='navigation-bar'>
                 <input type="checkbox" id="check" /> 
-                <label for="check" id="checkbtn"> <i class="fas fa-bars"></i> </label>
+                <label for="check" id="checkbtn"> <i className="fas fa-bars"></i> </label>
 
                 <label className='company-name'> Ride-my-way </label>
                 <ul className='navigation-list'>
