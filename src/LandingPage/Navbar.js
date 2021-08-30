@@ -7,13 +7,12 @@ let Navbar = () => {
         <div>
             <nav className='navigation-bar'>
                 <input type="checkbox" id="check" /> 
-                <label for="check" id="checkbtn"> <i className="fas fa-bars"></i> </label>
+                <label htmlFor="check" id="checkbtn"> <i className="fas fa-bars"></i> </label>
 
-                <label className='company-name'> Ride-my-way </label>
+                <label className='company-name'> Ride my way </label>
                 <ul className='navigation-list'>
-                    <Link to='/dashboard'><li>Ride</li></Link>
-                    <Link to='/drive'><li>Drive</li></Link>
-                      <Link to='/cities'><li>Cities</li></Link>
+                    <Link to='/create-account'><li>Ride</li></Link>
+                    <Link to='/driver-signup'><li>Drive</li></Link>
                 </ul>
             </nav> 
         </div>

@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import UserProfile from "../DriversDashboard/UserProfile";
 import mathe from "../Images/MATH8-1-1-X-1_2.png";
+import DashboardNavs from "../Routing/DashboardNavs";
 
 function DashbHome() {
   // const [message, ]
@@ -14,6 +15,7 @@ function DashbHome() {
   };
   return (
     <>
+    <DashboardNavs />
       <div className="home-container">
         <div className="home-child">
           <div className="idk">

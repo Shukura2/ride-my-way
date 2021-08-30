@@ -59,9 +59,13 @@ body {
   padding-bottom: 30px;
 }
 .create-acc {
-  color: rgb(126, 34, 126);
+  background: rgb(126, 34, 126);
+  color: white;
   cursor: pointer;
-  text-decoration: none;
+  text-decoration: none; 
+  padding: 10px;
+  margin: 5px;
+  border-radius: 5px;
 }
 .info2 {
   padding-bottom: 90px;
@@ -109,7 +113,7 @@ body {
 .banner2-secondContent {
   margin-top: 2rem;
 }
-.banner2-secondContent h3 {
+.banner2-secondContent {
   font-size: 14px;
   background-color: white;
   padding: 15px 20px;
@@ -118,101 +122,103 @@ body {
   cursor: pointer;
   color: rgb(82, 15, 82);
 }
+.banner2{
+  font-weight: bold;
+  text-decoration: none;
+}
 
 /* Ride Component */
 .ride-backround-img,
 .login-bckgrnd-img {
   background: url(./Images/gettyimages-1006620918-2048x2048.jpg);
   background-size: cover;
-  height: 600px;
+  min-width: 100vw;
+  min-height: 100vh;
 }
-.ride-form {
-  width: 400px;
-  height: 500px;
+.ride-form, .login-form {
+  min-width: 350px;
+  min-height: 300px;
   position: absolute;
   top: 50%;
   left: 80%;
   transform: translate(-50%, -50%);
-  background-color: rgb(82, 15, 82);
-  border-radius: 10px;
-}
-.ride-form-info input,
-.login-form input {
-  padding: 15px;
-  border: 1px solid white;
-  width: 300px;
-  margin: 5px;
-  border-radius: 5px;
-}
-.ride-form-info,
-.login-form-info {
-  margin-top: 30px;
-  text-align: center;
-}
-.make-reserve {
   background-color: white;
-  color: rgb(82, 15, 82);
-  border: 1px solid white;
-  width: 300px;
-  border-radius: 5px;
-  margin-top: 25px;
-  font-weight: bold;
-  text-decoration: none;
-  font-size: 18px;
-  padding: 15px;
-  cursor: pointer;
-  position: absolute;
-  left: 50px;
-}
-.account {
-  margin-top: 90px;
-  color: white;
-}
-.account-color {
-  color: white;
-  text-decoration: none;
+  border-radius: 10px;
+  padding: 10px;
 }
 
+.heading{
+  text-align: center;
+  color: purple;
+}
+.name, .email, .password{
+  font-size: 1.1rem;
+  margin-top: 3%;
+}
+.form-wrapper{
+  margin-top: 7%;
+}
+.input{
+  min-width: 100%;
+  border-bottom: 2px solid purple;
+  outline: none;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  padding: 5px;
+}
+.submit{
+  display: flex;
+  margin: auto;
+  cursor: pointer;
+  background-color: purple;
+  color: white;
+  margin-top: 4%;
+  padding: 3%;
+  border: none;
+  border-radius: 10px;
+  font-size: 1rem;
+  font-weight: bold;
+}
+.form-dir{
+  display: flex;
+  justify-content: center;
+  margin-top: 3%;
+  text-decoration: none;
+  color: black;
+}
+.span{
+  font-weight: bold;
+  cursor: pointer;
+  color: purple;
+}
+.error{
+  color: red;
+  font-size: 1rem;
+}
 /* LOGIN Component */
 .login-form {
-  width: 400px;
-  height: 300px;
+  min-width: 30%;
+  min-height: 25%;
   position: absolute;
   top: 50%;
   left: 80%;
   transform: translate(-50%, -50%);
-  background-color: rgb(82, 15, 82);
+  background-color: white;
   border-radius: 10px;
 }
-.login-form input,
-.login-form button,
-.logs {
-  margin-left: 45px;
-  margin-top: 25px;
-}
-.login {
-  width: 300px;
-  background-color: white;
-  color: rgb(82, 15, 82);
-  height: 50px;
-  font-size: 14px;
-  border-radius: 5px;
-  font-weight: bold;
-  border: 1px solid white;
-}
-.logs {
-  font-size: 14px;
-  padding-left: 40px;
-  color: white;
-}
-.logs .createcolor {
-  color: white;
-  text-decoration: none;
+/* driver signup */
+.drive {
+  background: url(./Images/lukasz-niescioruk-Jy88u4IpIas-unsplash.jpg);
+  background-size: cover;
+  min-width: 100vw;
+  min-height: 100vh;
 }
 
 .navbar {
   background-color: rgb(82, 15, 82);
   height: 80px;
+  width: 100%;
   display: flex;
   justify-content: flex-start;
   align-items: center;
@@ -222,13 +228,11 @@ body {
   padding-left: 20px;
   font-size: 2em;
 }
-
 .menu-bars {
   margin-left: 2rem;
   font-size: 2rem;
   background: none;
 }
-
 .nav-menu {
   background-color: rgb(82, 15, 82);
   width: 250px;
@@ -351,21 +355,23 @@ span {
 /* Map component style*/
 .map-wrap {
   background-color: rgb(243, 230, 230);
+  min-width: 100vw;
+  min-height: calc(100vh - 80px);
 }
 
 .flex-container-parent {
   display: flex;
-  width: 100%;
   justify-content: space-evenly;
   align-items: center;
   flex-wrap: wrap;
 }
 .flex-container-info {
-  flex-basis: 350px;
+  max-height: 100%;
+  /* min-width: 300px; */
   background-color: white;
   padding: 10px;
   margin: 20px;
-  height: 400px;
+  min-height: 410px;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
   justify-content: center;
 }
@@ -378,7 +384,7 @@ span {
   border-radius: 5px;
   text-decoration: none;
   position: relative;
-  top: 10px;
+  top: 15px;
 }
 .flex-c-img {
   width: 350px;
@@ -404,28 +410,6 @@ span {
   border-radius: 50%;
 }
 
-/*Make order component*/
-.make-order {
-  width: 500px;
-  height: 300px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: rgb(82, 15, 82);
-  flex-direction: column;
-  color: white;
-}
-.make-order-container {
-  width: 100vw;
-  height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.location {
-  width: 250px;
-  height: 30px;
-}
 
 /*Drivers Dashboard Folder*/
 /*DashbHome Component*/
@@ -442,6 +426,48 @@ span {
 .idk {
   display: flex;
   justify-content: space-between;
+}
+.dashboard-background{
+  background-color: rgb(243, 230, 230);
+}
+.dashboard{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.dashboard-form{
+  width: 70%;
+}
+.offers-render{
+  width: 25%;
+  min-height: 5rem;
+  border: 1px solid black;
+}
+.db-input{
+  width: 100%;
+  height: 30px;
+}
+.db-btn{
+  background-color: purple;
+  color: white;
+  height: 30px;
+  cursor: pointer
+}
+.flex-container{
+  display: flex;
+  /* justify-content: space-evenly; */
+  border: 1px solid black;
+  width: 30%;
+  min-height: 20%;
+  /* flex-direction: column; */
+}
+
+.my-offers{
+  width: 40%;
+  border: 1px solid black;
+  min-height: 40px;
+  padding: 2rem;
 }
 .home-container {
   background-color: rgb(243, 230, 230);
@@ -509,6 +535,29 @@ p {
   max-width: 100%;
   height: 320px;
 }
+.logout{
+  background-color: none;
+  color: rgb(82, 15, 82);
+  width: 70%;
+  height: 5%;
+  margin: 10%;
+}
+
+/* Ride history component */
+.td{
+  border: 1px solid #dddddd;
+  padding: 15px;
+}
+.th{
+  background-color: #dddddd;
+  padding: 15px;
+}
+.table{
+  margin: auto;
+  width: 90%;
+  border-collapse: collapse;
+  
+}
 
 /*User Profile*/
 .header-user-p {
@@ -544,6 +593,14 @@ p {
 .color-grn {
   background-color: green;
 }
+.btn-offer{
+  width: 50%;
+  height: 2rem;
+  /* margin-left: 0.5rem ; */
+}
+/* .hr{
+  outline: 1px solid black;
+} */
 
 /* .container-img-div {
   display: flex;
@@ -615,19 +672,19 @@ p {
   .ride-backround-img {
     background-size: cover;
     background-repeat: no-repeat;
-    height: 640px;
+    /* height: 640px; */
   }
   .ride-form {
-    width: 300px;
-    height: 450px;
-    position: absolute;
-    top: 50%;
+    width: 50%;
+    /* height: 450px; */
+    /* position: absolute; */
+    /* top: 50%; */
     left: 50%;
-    background-color: rgb(82, 15, 82);
-    border-radius: 10px;
+    /* background-color: rgb(82, 15, 82); */
+    /* border-radius: 10px; */
   }
   .ride-form-info input {
-    width: 250px;
+    /* width: 250px; */
   }
   .make-reserve {
     width: 247px;
@@ -643,22 +700,22 @@ p {
     height: 800px;
   }
   .login-form {
-    width: 300px;
-    height: 250px;
+    /* width: 300px; */
+    /* height: 250px; */
     position: absolute;
     top: 50%;
     left: 50%;
   }
-  .login-form input,
+  /* .login-form input,
   .login-form button,
   .logs {
     margin-left: 8px;
     margin-top: 15px;
-  }
+  } */
   .login,
   .login-form input {
-    width: 250px;
-    margin-left: 25px;
+    /* width: 90%; */
+    /* margin-left: 25px; */
   }
   .flex-container-info {
     flex-basis: 70%;

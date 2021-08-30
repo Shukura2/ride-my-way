@@ -11,19 +11,19 @@ import { FaComments } from 'react-icons/fa'
 export const SidebarData = [
   {
     title: "Dashboard",
-    path: "/drive",
+    path: "/dashboard-driver",
     icon: <FaDesktop />,
     className: "nav-text",
   },
   {
-    title: "User Profile",
-    path: "/user-profile",
+    title: "Create Offer",
+    path: "/create-offer",
     icon: <FaUserAlt />,
     className: "nav-text",
   },
   {
-    title: "Payment",
-    path: "/",
+    title: "My Offer",
+    path: "/my-offers",
     icon: <FaCreditCard />,
     className: "nav-text",
   },

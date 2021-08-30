@@ -1,29 +1,22 @@
 import React, { useState } from "react";
 import validation from "./LoginValidation";
-import { Link } from "react-router-dom";
-import { useDispatch } from "react-redux";
-import { login } from "../reducers/loginSlice";
+import { Link, useHistory } from "react-router-dom";
+import { connect, useDispatch } from "react-redux";
 import axios from "axios";
-import { useHistory } from "react-router-dom";
-import 'react-toastify/dist/ReactToastify.css';
 import { toast } from 'react-toastify';
-import { setLoginError } from '../reducers/loginSlice'
-import { connect } from 'react-redux'
+import { loginDriver, setLoginDriverError } from "../reducers/loginSliceDriver";
 
-const LogIn = (props) => {
+
+const DriveLogIn = (props) => {
 
   const [values, setValues] = useState({
     email:"",
     password:""
   })
 
-  // const auth = useSelector((state) => state.user)
-
+  const [errors, setErrors] = useState({});
   const dispatch = useDispatch()
   const history = useHistory()
-
-  const [errors, setErrors] = useState({});
-  console.log(errors)
 
   const handleChange = (event) => {
     setValues({
@@ -36,24 +29,27 @@ const handleFormSubmit = async (event) => {
   setErrors(validation(values));
 
   try {
-    const res = await axios.post('http://localhost:3000/v1/user/login', values)
-    localStorage.setItem('user', JSON.stringify(res.data.token))
-    dispatch(setLoginError({loginError: ""}))
-    history.push('/user-dashboard')
+    const res = await axios.post('http://localhost:3000/v1/driver/login', values)
+    console.log(res, 'mmmmmmmmm');
+    localStorage.setItem('driver', JSON.stringify(res.data.token))
+    dispatch(setLoginDriverError({loginErrors: ""}))
+    history.push('/dashboard-driver')
     const notify = () => toast(res.data.message);
     notify()
-    dispatch(login(res.data.user))
+    dispatch(loginDriver(res.data.driver))
+    
   } catch (err) {
-    dispatch(setLoginError({loginError: err.response.data.message}))
+    // console.log(err.response, 'error response driver login');
+    dispatch(setLoginDriverError({loginErrors: err.response.data.message}))
   }
 }
 
 
   return (
-    <div className="login-bckgrnd-img">
-      <div className="login-form">
-      <h3 className='heading'>Login</h3>
-      <span style={{color:'red'}}>{props.user.loginError}</span>
+    <div className="drive">
+      <form className="login-form">
+      <h3 className='heading'>Driver Login</h3>
+      <span style={{color:'red'}}>{props.driver.loginErrors}</span>
         <form className='form-wrapper'>
           <div className='email'>
             <label className='details'>Email</label>
@@ -68,17 +64,20 @@ const handleFormSubmit = async (event) => {
           <div>
             <button className='submit' onClick={handleFormSubmit}>Login</button>
           </div>
-          <Link to='/create-account' className='form-dir'>Not registered? <span className='span'> Create Account </span>  </Link>
+          <Link to='/driver-signup' className='form-dir'>Not registered? <span className='span'> Create Account </span>  </Link>
         </form>
-      </div>
+
+
+
+      </form>
     </div>
   );
 };
 
 const mapStateToProps = (state) => {
   return{
-    user: state.user
+    driver: state.driver
   }
 }
 
-export default connect(mapStateToProps)(LogIn);
+export default connect(mapStateToProps)(DriveLogIn);

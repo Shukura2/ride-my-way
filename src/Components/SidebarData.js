@@ -1,27 +1,32 @@
 import React from "react";
-import * as FaIcons from "react-icons/fa";
 import * as AiIcons from "react-icons/ai";
-
-import { FaCarSide } from "react-icons/fa";
-import { FaSignOutAlt } from "react-icons/fa";
 
 export const SidebarData = [
   {
     title: "My Dashboard",
-    path: "/dashboard",
+    path: "/user-dashboard",
     icon: <AiIcons.AiFillHome />,
     className: "nav-text",
   },
   {
-    title: "Available Rides",
-    path: "/map",
-    icon: <FaCarSide />,
+    title: "Ride History",
+    path: "/ride-history",
+    icon: <AiIcons.AiFillCar />,
     className: "nav-text",
   },
   {
-    title: "Logout",
-    path: "/home",
-    icon: <FaSignOutAlt />,
+    title: "Edit Profile",
+    path: "/edit-profile",
+    icon: <AiIcons.AiFillCar />,
     className: "nav-text",
   },
+  {
+    title: "Others",
+    path: "/my-dashboard",
+    icon: <AiIcons.AiFillCar />,
+    className: "nav-text",
+  },
+
+
+
 ];
