@@ -5,18 +5,15 @@ import { toast } from "react-toastify";
 import RenderMyOffer from "./RenderMyOffer";
 import { setOffers } from "../reducers/OfferSlice";
 import { useSelector, useDispatch } from "react-redux";
-import { useHistory } from "react-router";
 
 function MyOffers() {
   const offer = useSelector((state) => state.offers.offerData);
   console.log(offer);
   const dispatch = useDispatch();
   const [edit, setedit] = useState(false);
-  //   let subtitle;
   const getOffer = async () => {
     try {
       const res = await axios.get("http://localhost:3000/v1/offers");
-
       dispatch(setOffers({ offerData: res.data }));
     } catch (error) {
       console.log(error.response);
@@ -38,7 +35,7 @@ function MyOffers() {
           Authorization: `Bearer ${token}`,
         },
       });
-      const remaining = offer.filter((offer) => offer.id !== id);
+      const remaining = offer.filter((offers) => offers.id !== id);
       dispatch(setOffers({ offerData: remaining }));
 
       const notify = () => toast(res.data.message);
@@ -48,7 +45,7 @@ function MyOffers() {
     }
   };
 
-  const editOffer = async (id, dispatch, editDetail) => {
+  const editOffer = async (id, editDetail) => {
     try {
       const token = JSON.parse(localStorage.getItem("driver"));
       const res = await axios.put(

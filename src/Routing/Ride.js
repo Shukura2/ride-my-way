@@ -1,20 +1,18 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { useSelector } from 'react-redux'
 import 'react-toastify/dist/ReactToastify.css';
 import { connect } from 'react-redux'
 import AuthHook from "./AuthHook";
 
 const Ride = (props) => {
-const {handleFormSubmit, errors, setValues, values} = AuthHook()//
-  // const auth = useSelector((state) => state.isAuthenticated)
+const {handleFormSubmit, errors, setValues, values} = AuthHook()
 
   const handleChange = (event) => {
   setValues({
     ...values,
     [event.target.name]:event.target.value,
   }) 
-}//
+}
 
   return (
     <div className="ride-backround-img">

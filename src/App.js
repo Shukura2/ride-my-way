@@ -10,11 +10,12 @@ import UserProfile from './DriversDashboard/UserProfile';
 import {toast} from 'react-toastify'
 import ProtectedRoute from "./Routing/ProtectedRoute";
 import RideHistory from "./Routing/RideHistory";
-// import CreateOfferNav from "./Routing/CreateOfferNav";
 import MyOffers from "./Routing/MyOffers";
 import Map from "./Components/Pages/Map";
 import DashbHome from "./DriversDashboard/DashbHome";
 import CreateOffer from "./Routing/CreateOffer";
+import AcceptRejectRide from "./Routing/AcceptRejectRide";
+import DriverRideHistory from "./Routing/DriverRideHistory";
 
 toast.configure()
 function App() {
@@ -34,8 +35,9 @@ function App() {
       <Route exact path='/user-profile' component={UserProfile} />
       <ProtectedRoute exact path="/ride-history" component={RideHistory}/>
       <Route exact path="/create-offer" component={CreateOffer}/>
-
-            
+      <Route exact path="/accept-reject-offer" component={AcceptRejectRide}/>
+      <Route exact path="/driver-ride-history" component={DriverRideHistory}/>
+ 
     </Router>
   );
 }

@@ -22,7 +22,4 @@ export const loginSlice = createSlice({
 })
 
 export const { login, logout, setLoginError } = loginSlice.actions
-
-// export const loginUser = (state) => state.user.user
-
 export default loginSlice.reducer;

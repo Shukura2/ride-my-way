@@ -1,38 +1,36 @@
-import React from 'react'
+import axios from "axios";
+import React from "react";
+import { toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
-const MapRender = ({destination, amount}) => {
-
-    const tableMap = [
-        {destination: destination, amount: amount}
-    ]
-
-    const renderTableMap = (tableMap) => {
-        return(<tr key={tableMap}>
-            <td>{tableMap.destination}</td>
-            <td>{tableMap.amount}</td>
-        </tr>)
+const MapRender = ({ id, destination, amount, fullName }) => {
+  const handleJoinRide = async (offerId) => {
+    const token = JSON.parse(localStorage.getItem("user"));
+    try {
+      const res = await axios({
+        baseURL: `http://localhost:3000/v1/join/ride/${offerId}`,
+        method: "post",
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      });
+      const notify = () => toast(res.data.message);
+      notify();
+    } catch (error) {
+      console.log(error.response);
     }
+  };
 
-    return (
-        <div>
-            <h5>Destination: {destination}  </h5>
-            <h5>Amount: { amount }  </h5>
+  return (
+    <div>
+      <h5>Destination: {destination} </h5>
+      <h5>Amount: {amount} </h5>
+      <h5>Driver Name: {fullName}</h5>
+      <button className="button" onClick={() => handleJoinRide(id)}>
+        Join Ride
+      </button>
+    </div>
+  );
+};
 
-            {/* <table className='table'>
-                <thead>
-                    <tr>
-                        <th>Destination</th>
-                        <th>Amount</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td></td>
-                    </tr>
-                </tbody>
-            </table> */}
-        </div>
-    )
-}
-
-export default MapRender
+export default MapRender;

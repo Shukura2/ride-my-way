@@ -1,11 +1,10 @@
 import React, { useEffect } from "react";
-import NavbarDashoard from "../Components/DashoardNavsUser";
 import { useState } from "react";
-import { useSelector } from "react-redux";
 import axios from "axios";
+import DashboardNavs from "./DashboardNavs";
 
-const RideHistory = ({
-  driverId,
+const DriverRideHistory = ({
+  userId,
   offerId,
   amount,
   dateTime,
@@ -19,9 +18,8 @@ const RideHistory = ({
       
         rideHistory.map((rideHistoryU) => {
           return (
-            
               <tr key={rideHistoryU.offerId}>
-                <td className="td">{rideHistoryU.driverId}</td>
+                <td className="td">{rideHistoryU.userId}</td>
                 <td className="td">{rideHistoryU.offerId}</td>
                 <td className="td">{rideHistoryU.amount}</td>
                 <td className="td">{rideHistoryU.dateOfTrip}</td>
@@ -31,7 +29,6 @@ const RideHistory = ({
         
           );
     }
-      
     ));
   };
 
@@ -46,7 +43,6 @@ const RideHistory = ({
           Authorization: `Bearer ${token}`,
         },
       });
-      console.log(res, '.....');
       
       setHistory(res.data);
     } catch (error) {
@@ -60,12 +56,12 @@ const RideHistory = ({
 
   return (
     <div className="map-wrap">
-      <NavbarDashoard />
+      <DashboardNavs />
       
       <table className="table">
         <thead>
           <tr>
-            <th className="td th">DriverId</th>
+            <th className="td th">UserId</th>
             <th className="td th">OfferId</th>
             <th className="td th">Amount</th>
             <th className="td th">Date / Time</th>
@@ -81,4 +77,4 @@ const RideHistory = ({
   );
 };
 
-export default RideHistory;
+export default DriverRideHistory;

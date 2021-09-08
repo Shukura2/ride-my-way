@@ -1,7 +1,6 @@
 import axios from 'axios'
 import React, { useState } from 'react'
 import { useHistory } from 'react-router'
-import { setAddOffer } from '../reducers/OfferSlice'
 import { toast } from 'react-toastify';
 import DashboardNavs from './DashboardNavs';
 
@@ -36,7 +35,6 @@ const CreateOffer = () => {
                 }
             })
                 
-            // dispatch(setAddOffer(res.data.driver))
             history.push('/my-offers')
             const notify = () => toast(res.data.message);
             notify()

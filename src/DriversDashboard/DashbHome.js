@@ -4,7 +4,6 @@ import mathe from "../Images/MATH8-1-1-X-1_2.png";
 import DashboardNavs from "../Routing/DashboardNavs";
 
 function DashbHome() {
-  // const [message, ]
   const [accept, setAccept] = useState(1841);
   const [decline, setDecline] = useState(51);
   const acceptFn = () => {

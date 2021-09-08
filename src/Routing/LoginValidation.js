@@ -15,7 +15,3 @@ const validation = (values) => {
     return errors;
 }
 export default validation;
-
-// const values = {email:"arass"}
-
-// cons ans = !!values.email

@@ -1,15 +1,13 @@
 import React, { useState } from "react";
 import Modal from "react-modal";
 import EditModal from "./EditModal";
-import { useDispatch } from "react-redux";
 
 const RenderMyOffer = ({
   destination,
   amount,
   id,
   deletOffer,
-  editOffer,
-  edit,
+  editOffer
 }) => {
   const [isOpen, setIsOpen] = useState(false);
   const closeModal = () => {

@@ -4,15 +4,17 @@ export const OfferSlice = createSlice({
   name: 'authentication',
   initialState: {
     isAuthenticated: false,
+    id: '',
     amount: "",
     destination: "",
-    offerData:[]
+    offerData:[],
   },
   reducers: {
    setAddOffer: (state, action) => {
       state.isAuthenticated = true
       state.amount = action.payload.amount
       state.destination = action.payload.destination
+      state.id = action.payload.id
     }, 
     editModal: (state, action) => {
       state.isAuthenticated = true

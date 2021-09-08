@@ -19,7 +19,6 @@ function DashboardNavs() {
           </Link>
           <h3 className="navc">Ride-My-Way</h3>
         </div>
-
         
         <nav className={sidebar ? "nav-menu active" : "nav-menu"}>
           <ul className="nav-menu-items" onClick={showSidebar}>

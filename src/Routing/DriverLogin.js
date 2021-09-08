@@ -30,7 +30,6 @@ const handleFormSubmit = async (event) => {
 
   try {
     const res = await axios.post('http://localhost:3000/v1/driver/login', values)
-    console.log(res, 'mmmmmmmmm');
     localStorage.setItem('driver', JSON.stringify(res.data.token))
     dispatch(setLoginDriverError({loginErrors: ""}))
     history.push('/dashboard-driver')
@@ -39,11 +38,9 @@ const handleFormSubmit = async (event) => {
     dispatch(loginDriver(res.data.driver))
     
   } catch (err) {
-    // console.log(err.response, 'error response driver login');
     dispatch(setLoginDriverError({loginErrors: err.response.data.message}))
   }
 }
-
 
   return (
     <div className="drive">

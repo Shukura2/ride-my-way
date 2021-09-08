@@ -17,8 +17,6 @@ const LogIn = (props) => {
     password:""
   })
 
-  // const auth = useSelector((state) => state.user)
-
   const dispatch = useDispatch()
   const history = useHistory()
 
@@ -47,7 +45,6 @@ const handleFormSubmit = async (event) => {
     dispatch(setLoginError({loginError: err.response.data.message}))
   }
 }
-
 
   return (
     <div className="login-bckgrnd-img">
