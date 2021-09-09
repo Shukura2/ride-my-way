@@ -1,33 +1,43 @@
 import "./App.css";
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import { BrowserRouter as Router, Route } from "react-router-dom";
 import Ride from "../src/Routing/Ride";
 import Home from "./LandingPage/Home";
-
 import LogIn from "./Routing/LogIn";
-
-import NavbarDashoard from "./Components/NavbarDashoard";
-import Map from "./Components/Pages/Map";
-import MakeOrder from "./Components/Pages/MakeOrder";
-import Navbar from "./DriversDashboard/Navbar";
+import Homes from './Components/Pages/Homes';
+import DriverSignup from "./Routing/DriverSignup";
+import DriveLogIn from "./Routing/DriverLogin";
 import UserProfile from './DriversDashboard/UserProfile';
-import Feedback from './DriversDashboard/Feedback'
+import {toast} from 'react-toastify'
+import ProtectedRoute from "./Routing/ProtectedRoute";
+import RideHistory from "./Routing/RideHistory";
+import MyOffers from "./Routing/MyOffers";
+import Map from "./Components/Pages/Map";
+import DashbHome from "./DriversDashboard/DashbHome";
+import CreateOffer from "./Routing/CreateOffer";
+import AcceptRejectRide from "./Routing/AcceptRejectRide";
+import DriverRideHistory from "./Routing/DriverRideHistory";
 
+toast.configure()
 function App() {
   return (
     <Router>
-      <Route exact path="/home" component={Home} />
       <Route exact path="/" component={Home} />
+      <Route exact path="/home" component={Home} />
       <Route exact path="/create-account" component={Ride} />
-
       <Route exact path="/login" component={LogIn} />
+      <ProtectedRoute exact path="/user-dashboard" component={Map} />
+      <Route exact path="/my-dashboard" component={Homes} />
 
-      <Route exact path="/dashboard" component={NavbarDashoard} />
-      <Route exact path="/map" component={Map} />
-      <Route exact path="/make-order" component={MakeOrder} />
-      <Route exact path="/drive" component={Navbar} />
+      <Route exact path="/driver-signup" component={DriverSignup} />
+      <Route exact path="/driver-login" component={DriveLogIn} />
+      <Route exact path="/dashboard-driver" component={DashbHome} />
+      <Route exact path="/my-offers" component={MyOffers} />
       <Route exact path='/user-profile' component={UserProfile} />
-      <Route exact path='/feed-back' component={Feedback} />
-
+      <ProtectedRoute exact path="/ride-history" component={RideHistory}/>
+      <Route exact path="/create-offer" component={CreateOffer}/>
+      <Route exact path="/accept-reject-offer" component={AcceptRejectRide}/>
+      <Route exact path="/driver-ride-history" component={DriverRideHistory}/>
+ 
     </Router>
   );
 }

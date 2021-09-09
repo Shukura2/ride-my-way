@@ -1,7 +1,4 @@
 import React from "react";
-import * as FaIcons from "react-icons/fa";
-// import * as AiIcons from "react-icons/ai";
-import { FaCarSide } from "react-icons/fa";
 import { FaSignOutAlt } from "react-icons/fa";
 import { FaDesktop } from 'react-icons/fa';
 import { FaUserAlt } from 'react-icons/fa';
@@ -11,20 +8,32 @@ import { FaComments } from 'react-icons/fa'
 export const SidebarData = [
   {
     title: "Dashboard",
-    path: "/drive",
+    path: "/dashboard-driver",
     icon: <FaDesktop />,
     className: "nav-text",
   },
   {
-    title: "User Profile",
-    path: "/user-profile",
+    title: "Create Offer",
+    path: "/create-offer",
     icon: <FaUserAlt />,
     className: "nav-text",
   },
   {
-    title: "Payment",
-    path: "/",
+    title: "My Offer",
+    path: "/my-offers",
     icon: <FaCreditCard />,
+    className: "nav-text",
+  },
+  {
+    title: "Accept/Reject Offer",
+    path: "/accept-reject-offer",
+    icon: <FaComments />,
+    className: "nav-text",
+  },
+  {
+    title: "Ride History",
+    path: "/driver-ride-history",
+    icon: <FaComments />,
     className: "nav-text",
   },
   {

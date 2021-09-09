@@ -1,72 +1,50 @@
-import React from "react";
-import toyota from "../../Images/SE_-_2020_Toyota_Camry.png";
-import { Link } from "react-router-dom";
-import cartoon from "../../Images/download-2.jpg";
-import { FaStar } from "react-icons/fa";
+import React, { useEffect, useState } from "react";
+import axios from "axios";
+import { useSelector } from "react-redux";
+import DashoardNavsUser from "../DashoardNavsUser";
+import MapRender from "./MapRender";
 
 function Map() {
+  const state = useSelector((state) => state.offers);
+  const [joinRide, setJoinRide] = useState([]);
+
+  const handleChange = async () => {
+    try {
+      const token = JSON.parse(localStorage.getItem("user"));
+
+      const res = await axios({
+        baseURL: "http://localhost:3000/v1/offers",
+        method: "get",
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      });
+      setJoinRide(res.data);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  useEffect(() => {
+    handleChange();
+  }, []);
+
   return (
     <div className="map-wrap">
-      <div className="flex-container-parent">
-        <div className="flex-container-info">
-          <img src={toyota} className="flex-c-img" alt="toyota" />
-          <h4>AGL 666 DN</h4>
-
-          <hr />
-
-          <div className="flex-c-users">
-            <div className="fcu-img">
-              <img src={cartoon} className="cartoon" alt="cartoon" />
-            </div>
-            <div>
-              <h3>Iskilu Rasheed</h3>
-            </div>
-            <FaStar /> <FaStar /> <FaStar /> <FaStar /> <FaStar />
+      <DashoardNavsUser />
+      <div className='flex-container-parent'>
+      {joinRide.map((joinRides) => {
+        return (
+            <div className="flex-container-info">
+            <MapRender
+              destination={joinRides.destination}
+              amount={joinRides.amount}
+              id={joinRides.offerId}
+              fullName={joinRides.fullName}
+            />
           </div>
-          <Link to="/make-order" className="button">
-            Make Order
-          </Link>
-        </div>
-
-        <div className="flex-container-info">
-          <img src={toyota} className="flex-c-img" alt="toyota" />
-          <h4>JJJ 01 DNA</h4>
-
-          <hr />
-
-          <div className="flex-c-users">
-            <div className="fcu-img">
-              <img src={cartoon} className="cartoon" alt="cartoon" />{" "}
-            </div>
-            <div>
-              <h3>Ola Shehu</h3>
-            </div>
-            <FaStar /> <FaStar /> <FaStar /> <FaStar /> <FaStar />
-          </div>
-          <Link to="/make-order" className="button">
-            Make Order
-          </Link>
-        </div>
-        <div className="flex-container-info">
-          <img src={toyota} className="flex-c-img" alt="toyota" />
-          <h4>MUS 60 DNA</h4>
-
-          <hr />
-
-          <div className="flex-c-users">
-            <div className="fcu-img">
-              {" "}
-              <img src={cartoon} className="cartoon" alt="cartoon" />
-            </div>
-            <div>
-              <h3>Paul Anu</h3>
-            </div>
-            <FaStar /> <FaStar /> <FaStar /> <FaStar /> <FaStar />
-          </div>
-          <Link to="/make-order" className="button">
-            Make Order
-          </Link>
-        </div>
+        );
+      })}
       </div>
     </div>
   );
